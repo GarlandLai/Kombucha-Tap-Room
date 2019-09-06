@@ -4,7 +4,7 @@ import KegList from './KegList';
 function NavButtons(){
   return (
     <div>
-      <KegList/>
+      <h1>Homepage</h1>
     </div>
   );
 }
