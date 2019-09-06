@@ -9,13 +9,15 @@
 
 _Website for a Kombucha Tap Room_
 
-![Component Tree](ComponentTree.png)
+![Component Tree](/src/ComponentTree.png)
 
 ## Setup/Installation Requirements
 
 1. [Click here](https://github.com/GarlandLai/Kombucha-Tap-Room.git) to get started!
 2. _Clone repository._
 3. _Enter project root directory and type "npm install"_
+4. _Type "npm run start" to start server_
+5. _Look around and enjoy!_
 
 ## Known Bugs
 
