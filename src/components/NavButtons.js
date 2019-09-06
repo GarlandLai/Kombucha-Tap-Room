@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap'
 import NavSearch from './NavSearch'
+import Header from './Header'
 
 function NavButtons(){
   return (
@@ -13,6 +14,7 @@ function NavButtons(){
         </Nav>
         <NavSearch/>
       </Navbar>
+    <Header/>
     </div>
   );
 }

@@ -9,15 +9,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
+    <BrowserRouter>
       <div className="App">
         <NavButtons/>
-        <Header/>
         <KegList/>
-        <BrowserRouter>
+        <Switch>
         <Route path="/new" component={NewKegForm} />
         <Route path="/edit" component={EditKegForm} />
-        </BrowserRouter>
+        </Switch>
       </div>
+    </BrowserRouter>
   );
 }
 
