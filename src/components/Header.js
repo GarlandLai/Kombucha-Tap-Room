@@ -4,7 +4,7 @@ function Header(){
   return (
     <div>
       <div class="jumbotron">
-        <h1> Garland's Kombucha Tap Room</h1>
+        <h1>Garland's Kombucha Tap Room</h1>
       </div>
     </div>
   );
