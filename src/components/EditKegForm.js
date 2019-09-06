@@ -1,9 +1,16 @@
 import React from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 
-function EditKegForm() {
+function EditKegForm(props) {
+
+  var MyEditStyles = {
+    backgroundColor: 'grey',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+  }
+
   return(
-    <div>
+    <div style={MyEditStyles}>
     <div class="container">
     <Form>
     <Row>

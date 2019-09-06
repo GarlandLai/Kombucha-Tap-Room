@@ -1,9 +1,14 @@
 import React from 'react';
 import { Form, Row, Col, Button} from 'react-bootstrap';
 
-function NewKegForm() {
+function NewKegForm(props) {
+  var MyNewStyles = {
+    backgroundColor: 'grey',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+  }
   return(
-    <div>
+    <div style={MyNewStyles}>
     <div class="container">
     <Form>
     <Row>
