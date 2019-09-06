@@ -8,6 +8,7 @@ import EditKegForm from "./EditKegForm";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Homepage from "./Homepage";
 import AboutUs from "./AboutUs";
+import Error404 from "./Error404";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/products" component={KegList} />
           <Route path="/new" component={NewKegForm} />
           <Route path="/edit" component={EditKegForm} />
+          <Route component={Error404} />
         </Switch>
       </BrowserRouter>
     </div>
