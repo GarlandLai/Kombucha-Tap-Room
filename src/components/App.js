@@ -4,6 +4,7 @@ import NavButtons from "./NavButtons";
 import Header from "./Header";
 import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
+import EditKegForm from "./EditKegForm";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
     <Header/>
     <KegList/>
     <NewKegForm/>
+    <br/>
+    <EditKegForm/>
     </div>
   );
 }

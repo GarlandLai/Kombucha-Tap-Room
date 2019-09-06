@@ -1,7 +1,7 @@
 import React from 'react';
-import { Form, Row, Col, Button} from 'react-bootstrap';
+import { Form, Row, Col, Button } from 'react-bootstrap';
 
-function NewKegForm() {
+function EditKegForm() {
   return(
     <div>
     <div class="container">
@@ -26,13 +26,13 @@ function NewKegForm() {
     <Form.Control placeholder="Description" />
     </Col>
     <Button variant="primary" type="submit">
-  Add
-</Button>
-</Row>
+    Update
+  </Button>
+    </Row>
     </Form>
     </div>
     </div>
   );
 }
 
-export default NewKegForm
+export default EditKegForm

@@ -4,10 +4,12 @@ import { Button, Form, FormControl} from 'react-bootstrap'
 function NavSearch(){
 
   return (
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-danger">Search</Button>
-    </Form>
+    <div>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-danger">Search</Button>
+      </Form>
+    </div>
   );
 }
 
