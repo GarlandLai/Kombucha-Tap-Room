@@ -3,6 +3,7 @@ import '../App.css';
 import NavButtons from "./NavButtons";
 import Header from "./Header";
 import KegList from "./KegList";
+import NewKegForm from "./NewKegForm";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <NavButtons/>
     <Header/>
     <KegList/>
+    <NewKegForm/>
     </div>
   );
 }

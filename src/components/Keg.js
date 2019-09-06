@@ -10,7 +10,6 @@ function Keg(props){
       <h3>{props.price}</h3>
       <h3>{props.flavor}</h3>
       <p><em>{props.content}</em></p>
-      <hr/>
     </div>
   );
 }
