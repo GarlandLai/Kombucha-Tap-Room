@@ -11,22 +11,38 @@ import AboutUs from "./AboutUs";
 import Error404 from "./Error404";
 
 
-function App() {
-  return (
-    <div className="App">
-      <NavButtons />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/about" component={AboutUs} />
-          <Route path="/products" component={KegList} />
-          <Route path="/new" component={NewKegControl} />
-          <Route path="/edit" component={EditKegForm} />
-          <Route component={Error404} />
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      masterKegList: []
+    };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+  }
+
+  handleAddingNewKegToList(newKeg) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <NavButtons />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/about" component={AboutUs} />
+            <Route path="/products" render={()=><KegList kegList={this.state.masterKegList} />} />
+            <Route path="/new" render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+            <Route path="/edit" component={EditKegForm} />
+            <Route component={Error404} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap'
-import Keg from './Keg'
+import Keg from './Keg';
+import PropTypes from 'prop-types';
 
 
 function KegList(props){
@@ -10,9 +11,11 @@ function KegList(props){
     paddingBottom: '50px',
     color: "White"
   }
+  
   return (
     <div style={ListStyles}>
-    {masterKegList.map((keg, index) =>
+    <h1>test</h1>
+    {props.kegList.map((keg, index) =>
         <Keg
           name={keg.name}
           brand={keg.brand}
@@ -24,6 +27,10 @@ function KegList(props){
       )}
     </div>
   );
+}
+
+KegList.propTypes = {
+  kegList: PropTypes.array
 }
 
 export default KegList;
