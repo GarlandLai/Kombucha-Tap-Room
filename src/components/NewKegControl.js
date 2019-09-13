@@ -1,4 +1,7 @@
 import React from 'react';
+import AdminConfirmation from './AdminConfirmation';
+import NewKegForm from './NewKegForm';
+
 
 class NewKegControl extends React.Component {
 
@@ -7,15 +10,26 @@ class NewKegControl extends React.Component {
       this.state = {
         formVisibleOnPage: false
       };
+      this.handleAdminConfirmation = this.handleAdminConfirmation.bind(this);
     }
 
-  render() {
-    return (
-      <div>
-      <p>NewKegControl component!</p>
-      </div>
-    );
+    handleAdminConfirmation() {
+      this.setState({formVisibleOnPage: true});
+    }
+
+    render(){
+      let currentlyVisibleContent = null;
+      if (this.state.formVisibleOnPage){
+        currentlyVisibleContent = <NewKegForm />;
+      } else {
+        currentlyVisibleContent = <AdminConfirmation onAdminConfirmation={this.handleAdminConfirmation}/>;
+      }
+      return (
+        <div>
+          {currentlyVisibleContent}
+        </div>
+      );
+    }
   }
-}
 
 export default NewKegControl;
