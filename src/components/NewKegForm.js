@@ -6,7 +6,7 @@ function NewKegForm(props) {
   let _brand = null;
   let _price = null;
   let _flavor = null;
-  let _description = null;
+  let _content = null;
 
   var MyNewStyles = {
     backgroundColor: 'grey',
@@ -20,12 +20,12 @@ function NewKegForm(props) {
     console.log(_brand.value);
     console.log(_price.value);
     console.log(_flavor.value);
-    console.log(_description.value);
+    console.log(_content.value);
     _name.value = '';
     _brand.value = '';
     _price.value = '';
     _flavor.value = '';
-    _description.value = '';
+    _content.value = '';
   }
 
   return(
@@ -50,7 +50,7 @@ function NewKegForm(props) {
     <br/>
     <Row>
     <Col>
-    <Form.Control type='text' id='description' placeholder="Description" ref={(input) => {_description = input;}}/>
+    <Form.Control type='text' id='content' placeholder="Description" ref={(input) => {_content = input;}}/>
     </Col>
     <Button variant="primary" type="submit">
   Add
