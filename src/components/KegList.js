@@ -26,7 +26,7 @@ function KegList(props){
       )}
     </div>
   );
-}
+} 
 
 KegList.propTypes = {
   kegList: PropTypes.array
