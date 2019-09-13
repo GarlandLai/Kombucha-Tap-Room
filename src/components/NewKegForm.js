@@ -14,7 +14,7 @@ function NewKegForm(props) {
     paddingBottom: '50px',
   }
 
-  function handleNewSubmit(event){
+  function handleNewKegFormSubmission(event){
     event.preventDefault();
     console.log(_name.value);
     console.log(_brand.value);
@@ -33,7 +33,7 @@ function NewKegForm(props) {
     <div>
       <h1>Add New Kombucha Keg</h1>
       <div class="container"  style={MyNewStyles}>
-        <form onSubmit={handleNewSubmit}>
+        <form onSubmit={handleNewKegFormSubmission}>
           <input
             type='text'
             id='name'
@@ -74,5 +74,6 @@ function NewKegForm(props) {
 NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func
 };
+
 
 export default NewKegForm;

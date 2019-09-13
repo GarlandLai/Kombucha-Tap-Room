@@ -20,7 +20,7 @@ class NewKegControl extends React.Component {
     render(){
       let currentlyVisibleContent = null;
       if (this.state.formVisibleOnPage){
-        currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>;
+      currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>;
       } else {
         currentlyVisibleContent = <AdminConfirmation onAdminConfirmation={this.handleAdminConfirmation}/>;
       }

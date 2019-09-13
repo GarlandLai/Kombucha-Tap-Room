@@ -43,10 +43,13 @@ class App extends React.Component {
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   }
 
-  handleAddingNewKegToList(newKeg) {
-    let newMasterKegList = this.state.masterKegList.slice();
+  handleAddingNewKegToList(newKeg){
+    var newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
+    console.log(newKeg);
+    console.log(newMasterKegList);
+    console.log(this.state.masterKegList);
   }
 
   render() {
@@ -58,7 +61,7 @@ class App extends React.Component {
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={AboutUs} />
             <Route path="/products" render={()=><KegList kegList={this.state.masterKegList} />} />
-            <Route path="/new" render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+            <Route path='/new' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
             <Route path="/edit" component={EditKegForm} />
             <Route component={Error404} />
           </Switch>
