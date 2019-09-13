@@ -2,11 +2,20 @@ import React from 'react';
 
 class NewKegControl extends React.Component {
 
-  render(){
+    constructor(props) {
+      super(props);
+      this.state = {
+        formVisibleOnPage: false
+      };
+    }
+
+  render() {
     return (
       <div>
-      <p></p>
+      <p>NewKegControl component!</p>
       </div>
     );
   }
 }
+
+export default NewKegControl;
