@@ -10,11 +10,10 @@ function KegList(props){
     paddingBottom: '50px',
     color: "White"
   }
-
+console.log(props.kegList);
   return (
     <div style={ListStyles}>
-    <hr/>
-    {props.kegList.map((keg, index) =>
+    {props.kegList.map((keg, index)=>
         <Keg
           name={keg.name}
           brand={keg.brand}
@@ -26,7 +25,7 @@ function KegList(props){
       )}
     </div>
   );
-} 
+}
 
 KegList.propTypes = {
   kegList: PropTypes.array

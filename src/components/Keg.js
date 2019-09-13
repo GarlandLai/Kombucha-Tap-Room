@@ -11,7 +11,7 @@ function Keg(props){
       <h3>{props.flavor}</h3>
       <p><em>{props.content}</em></p>
     </div>
-  );
+  )
 }
 
 Keg.propTypes = {
