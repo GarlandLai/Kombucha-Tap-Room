@@ -1,20 +1,18 @@
 import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap'
 import Keg from './Keg';
 import PropTypes from 'prop-types';
 
 
 function KegList(props){
-  // var ListStyles = {
-  //   backgroundColor: 'grey',
-  //   paddingTop: '50px',
-  //   paddingBottom: '50px',
-  //   color: "White"
-  // }
+  var ListStyles = {
+    backgroundColor: 'grey',
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    color: "White"
+  }
 
   return (
-    // <div style={ListStyles}>
-    <div>
+    <div style={ListStyles}>
     <hr/>
     {props.kegList.map((keg, index) =>
         <Keg
