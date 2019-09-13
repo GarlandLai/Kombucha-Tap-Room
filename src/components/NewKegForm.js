@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Row, Col, Button} from 'react-bootstrap';
+// import { Form, Row, Col, Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 function NewKegForm(props) {
@@ -34,31 +34,14 @@ function NewKegForm(props) {
     <div>
       <h1>Add New Kombucha Keg</h1>
       <div class="container"  style={MyNewStyles}>
-        <Form onSubmit={handleNewSubmit}>
-          <Row>
-            <Col>
-              <Form.Control type='text' id='name' placeholder="Name" ref={(input) => {_name = input;}}/>
-            </Col>
-            <Col>
-              <Form.Control type='text' id='brand' placeholder="Brand" ref={(input) => {_brand = input;}}/>
-            </Col>
-            <Col>
-              <Form.Control type='text' id='price' placeholder="Price" ref={(input) => {_price = input;}}/>
-            </Col>
-            <Col>
-              <Form.Control type='text' id='flavor' placeholder="Flavor" ref={(input) => {_flavor = input;}}/>
-            </Col>
-          </Row>
-          <br/>
-          <Row>
-            <Col>
-              <Form.Control type='text' id='content' placeholder="Description" ref={(input) => {_content = input;}}/>
-            </Col>
-            <Button variant="primary" type="submit">
-              Add
-            </Button>
-          </Row>
-        </Form>
+        <form onSubmit={handleNewSubmit}>
+          <input type='text' id='name' placeholder="Name" ref={(input) => {_name = input;}}/>
+          <input type='text' id='brand' placeholder="Brand" ref={(input) => {_brand = input;}}/>
+          <input type='text' id='price' placeholder="Price" ref={(input) => {_price = input;}}/>
+          <input type='text' id='flavor' placeholder="Flavor" ref={(input) => {_flavor = input;}}/>
+          <input type='text' id='content' placeholder="Description" ref={(input) => {_content = input;}}/>
+          <button type='submit'>Add!</button>
+        </form>
       </div>
     </div>
   );
