@@ -34,6 +34,6 @@ class NewKegControl extends React.Component {
 
   NewKegControl.propTypes = {
     onNewKegCreation: PropTypes.func
-  }
+  };
 
 export default NewKegControl;

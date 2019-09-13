@@ -5,16 +5,17 @@ import PropTypes from 'prop-types';
 
 
 function KegList(props){
-  var ListStyles = {
-    backgroundColor: 'grey',
-    paddingTop: '50px',
-    paddingBottom: '50px',
-    color: "White"
-  }
-  
+  // var ListStyles = {
+  //   backgroundColor: 'grey',
+  //   paddingTop: '50px',
+  //   paddingBottom: '50px',
+  //   color: "White"
+  // }
+
   return (
-    <div style={ListStyles}>
-    <h1>test</h1>
+    // <div style={ListStyles}>
+    <div>
+    <hr/>
     {props.kegList.map((keg, index) =>
         <Keg
           name={keg.name}
@@ -31,6 +32,6 @@ function KegList(props){
 
 KegList.propTypes = {
   kegList: PropTypes.array
-}
+};
 
 export default KegList;

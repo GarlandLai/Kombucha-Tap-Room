@@ -12,6 +12,7 @@ import Error404 from "./Error404";
 
 
 class App extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {
