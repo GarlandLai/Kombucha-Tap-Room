@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form, Row, Col, Button} from 'react-bootstrap';
+import { Form, Row, Col, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewKegForm(props) {
   let _name = null;
@@ -13,16 +14,16 @@ function NewKegForm(props) {
     backgroundColor: 'grey',
     paddingTop: '50px',
     paddingBottom: '50px',
-  }
+  };
 
-  function handleNewKegFormSubmission(event){
+  function handleNewKegFormSubmission(event) {
     event.preventDefault();
     console.log(_name.value);
     console.log(_brand.value);
     console.log(_price.value);
     console.log(_flavor.value);
     console.log(_content.value);
-    props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, flavor: _flavor.value, content: _content.value})
+    props.onNewKegCreation({ name: _name.value, brand: _brand.value, price: _price.value, flavor: _flavor.value, content: _content.value, id: v4() });
     _name.value = '';
     _brand.value = '';
     _price.value = '';
@@ -30,29 +31,49 @@ function NewKegForm(props) {
     _content.value = '';
   }
 
-  return(
+  return (
     <div>
       <h1>Add New Kombucha Keg</h1>
-      <div class="container"  style={MyNewStyles}>
+      <div className="container"  style={MyNewStyles}>
         <Form onSubmit={handleNewKegFormSubmission}>
           <Row>
             <Col>
-              <Form.Control type='text' id='name' placeholder="Name" ref={(input) => {_name = input;}}/>
+              <Form.Control type='text'
+                id='name'
+                placeholder="Name"
+                ref={(input) => {_name = input;}}/>
+
             </Col>
             <Col>
-              <Form.Control type='text' id='brand' placeholder="Brand" ref={(input) => {_brand = input;}}/>
+              <Form.Control type='text'
+                id='brand'
+                placeholder='Brand'
+                ref={(input) => {_brand = input;}}/>
+
             </Col>
             <Col>
-              <Form.Control type='text' id='price' placeholder="Price" ref={(input) => {_price = input;}}/>
+              <Form.Control type='number'
+                id='price'
+                placeholder="Price"
+                ref={(input) => {_price = input;}}/>
+
             </Col>
             <Col>
-              <Form.Control type='text' id='flavor' placeholder="Flavor" ref={(input) => {_flavor = input;}}/>
+              <Form.Control type='text'
+                id='flavor'
+                placeholder="Flavor"
+                ref={(input) => {_flavor = input;}}/>
+
             </Col>
           </Row>
           <br/>
           <Row>
             <Col>
-              <Form.Control type='text' id='content' placeholder="Description" ref={(input) => {_content = input;}}/>
+              <Form.Control type='text'
+                id='content'
+                placeholder="Description"
+                ref={(input) => {_content = input;}}/>
+
             </Col>
             <Button variant="primary" type="submit">
               Add
@@ -65,8 +86,7 @@ function NewKegForm(props) {
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
 };
-
 
 export default NewKegForm;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Header(){
+function Header() {
   return (
     <div>
-      <div class="jumbotron">
+      <div className="jumbotron">
         <h1>Garland's Kombucha Tap Room</h1>
       </div>
     </div>
