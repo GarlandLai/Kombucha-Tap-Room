@@ -9,44 +9,44 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import AboutUs from './AboutUs';
 import Error404 from './Error404';
+import Moment from 'moment';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [
-        // {
-        //   name: 'Strawberry Blast',
-        //   brand: 'Kombucha Nation',
-        //   price: 6,
-        //   flavor: 'Strawberry',
-        //   content: 'Tart and full of flavor!',
-        // },
-        // {
-        //   name: 'Refresh',
-        //   brand: 'Kombucha Nation',
-        //   price: 6,
-        //   flavor: 'Watermelon',
-        //   content: 'This will quench you\'re thirst like no other!',
-        // },
-        // {
-        //   name: 'Hydrate',
-        //   brand: 'Kombucha Nation',
-        //   price: 6,
-        //   flavor: 'Coconut',
-        //   content: 'Low on electrolytes? Look no further than this 100% organic coconut water.',
-        // },
-      ],
+      masterKegList: [],
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
   }
 
   handleAddingNewKegToList(newKeg) {
     let newMasterKegList = this.state.masterKegList.slice();
+    newKeg.formattedWaitTime = (newKeg.timeOpen).fromNow(true);
     newMasterKegList.push(newKeg);
     this.setState({ masterKegList: newMasterKegList });
     console.log(newMasterKegList);
+  }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+    this.updateKegElapsedWaitTime(),
+    5000
+    );
+  }
+
+  updateKegElapsedWaitTime() {
+    console.log("check");
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.forEach((keg) =>
+      keg.formattedWaitTime = (keg.timeOpen).fromNow(true)
+    );
+    this.setState({masterKegList: newMasterKegList})
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.waitTimeUpdateTimer);
   }
 
   render() {
