@@ -22,6 +22,10 @@ class App extends React.Component {
       masterKegList: [
         {
           name: 'Test',
+          brand: 'brand',
+          price: 4,
+          flavor: 'flavor',
+          content: 'content',
           id: '66540ffd-5310-46ac-a506-99b73568ce53',
         },
       ],
