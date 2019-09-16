@@ -12,6 +12,8 @@ console.log(props.selectedKeg)
 
   return(
     <div style={MyEditStyles}>
+      <h1>Edit Keg</h1>
+      <br/>
     <div className="container">
     <Form>
     <Row>

@@ -10,7 +10,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Homepage from './Homepage';
 import AboutUs from './AboutUs';
 import Error404 from './Error404';
-import Moment from 'moment';
 import Admin from './Admin';
 
 class App extends React.Component {
@@ -46,26 +45,6 @@ class App extends React.Component {
     this.setState({ selectedKeg: keg });
   };
 
-  componentDidMount() {
-    this.waitTimeUpdateTimer = setInterval(() =>
-    this.updateKegElapsedWaitTime(),
-    60000
-    );
-  }
-
-  updateKegElapsedWaitTime() {
-    // console.log("check");
-    let newMasterKegList = this.state.masterKegList.slice();
-    newMasterKegList.forEach((keg) =>
-      keg.formattedWaitTime = (keg.timeOpen).fromNow(true)
-    );
-    this.setState({ masterKegList: newMasterKegList });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.waitTimeUpdateTimer);
-  }
-
   render() {
     console.log(this.state.masterKegList);
     return (
@@ -81,8 +60,6 @@ class App extends React.Component {
 
             <Route path='/new' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
 
-
-            <Route path="/edit" component={EditKegForm} />
             <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}onKegSelection=   {this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
             <Route component={Error404} />
