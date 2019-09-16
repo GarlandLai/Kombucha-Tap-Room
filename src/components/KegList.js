@@ -20,6 +20,7 @@ function KegList(props) {
           flavor={keg.flavor}
           content={keg.content}
           formattedWaitTime={keg.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
           key={keg.id}
         />
       )}
@@ -29,6 +30,7 @@ function KegList(props) {
 
 KegList.propTypes = {
   kegList: PropTypes.array,
+  currentRouterPath: PropTypes.string,
 };
 
 export default KegList;

@@ -12,6 +12,7 @@ function NavButtons(){
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/about">About Us</Nav.Link>
           <Nav.Link href="/products"> Product List</Nav.Link>
+          <Nav.Link href="/admin">Admin List</Nav.Link>
           <Nav.Link href="/new"> Add New Flavors</Nav.Link>
           <Nav.Link href="/edit">Edit</Nav.Link>
         </Nav>
