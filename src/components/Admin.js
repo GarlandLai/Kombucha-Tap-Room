@@ -4,11 +4,20 @@ import KegList from './KegList';
 import EditKegForm from './EditKegForm';
 
 function Admin(props) {
+  let optionalSelectedKegContent = null;
+  if (props.selectedKeg != null) {
+    optionalSelectedKegContent =  <EditKegForm />;
+  };
+
   return (
     <div>
+    <h1>Admin</h1>
+    {optionalSelectedKegContent}
     <KegList
       kegList={props.kegList}
-      currentRouterPath={props.currentRouterPath} />
+      currentRouterPath={props.currentRouterPath}
+      onKegSelection={props.onKegSelection}
+       />
     </div>
   );
 }
@@ -16,6 +25,8 @@ function Admin(props) {
 Admin.propTypes = {
   kegList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
+  onKegSelection: PropTypes.func.isRequired,
+  selectedKeg: PropTypes.object,
 };
 
 export default Admin;

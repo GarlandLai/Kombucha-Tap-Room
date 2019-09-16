@@ -18,14 +18,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTicket: null,
+      selectedKeg: null,
       masterKegList: [
         {
           name: 'Test',
+          id: '66540ffd-5310-46ac-a506-99b73568ce53',
         },
       ],
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+    this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
   }
 
   handleAddingNewKegToList(newKeg) {
@@ -36,6 +38,10 @@ class App extends React.Component {
     console.log(newMasterKegList);
   }
 
+  handleChangingSelectedKeg(keg) {
+    this.setState({ selectedKeg: keg });
+  };
+
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
     this.updateKegElapsedWaitTime(),
@@ -44,12 +50,12 @@ class App extends React.Component {
   }
 
   updateKegElapsedWaitTime() {
-    console.log("check");
+    // console.log("check");
     let newMasterKegList = this.state.masterKegList.slice();
     newMasterKegList.forEach((keg) =>
       keg.formattedWaitTime = (keg.timeOpen).fromNow(true)
     );
-    this.setState({masterKegList: newMasterKegList})
+    this.setState({ masterKegList: newMasterKegList });
   }
 
   componentWillUnmount() {
@@ -73,7 +79,8 @@ class App extends React.Component {
 
 
             <Route path="/edit" component={EditKegForm} />
-            <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}/>} />
+            <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}onKegSelection=   {this.handleChangingSelectedKeg}
+            selectedKeg={this.state.selectedKeg}/>} />
             <Route component={Error404} />
           </Switch>
         </BrowserRouter>

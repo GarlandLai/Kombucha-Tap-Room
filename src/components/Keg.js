@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Moment from 'moment';
 
 function Keg(props) {
-  const ticketInformation =
+  const kegInformation =
   <div>
     <h1>{props.name}</h1>
     <h3>{props.brand}</h3>
@@ -15,15 +15,15 @@ function Keg(props) {
 
   if (props.currentRouterPath === '/admin') {
     return (
-      <div onClick={() => {alert('hey, you just clicked ' + props.name);}}>
+      <div onClick={() => {props.onKegSelection({ name: props.name, brand: props.brand, price: props.price, flavor: props.flavor, content: props.content, formattedWaitTime: props.formattedWaitTime });}}>
 
-        {ticketInformation}
+      {kegInformation}
       </div>
     );
   } else {
     return (
       <div>
-        {ticketInformation}
+        {kegInformation}
       </div>
     );
   }
@@ -37,6 +37,7 @@ Keg.propTypes = {
   content: PropTypes.string,
   formattedWaitTime: PropTypes.string,
   currentRouterPath: PropTypes.string,
+  onKegSelection: PropTypes.func,
 };
 
 export default Keg;
