@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
-import Moment from 'moment';
 
 function NewKegForm(props) {
   let _name = null;
@@ -24,7 +23,7 @@ function NewKegForm(props) {
     console.log(_price.value);
     console.log(_flavor.value);
     console.log(_content.value);
-    props.onNewKegCreation({ name: _name.value, brand: _brand.value, price: _price.value, flavor: _flavor.value, content: _content.value, id: v4(), timeOpen: new Moment() });
+    props.onNewKegCreation({ name: _name.value, brand: _brand.value, price: _price.value, flavor: _flavor.value, content: _content.value, id: v4()});
     _name.value = '';
     _brand.value = '';
     _price.value = '';
