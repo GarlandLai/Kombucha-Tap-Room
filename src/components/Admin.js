@@ -6,7 +6,7 @@ import EditKegForm from './EditKegForm';
 function Admin(props) {
   let optionalSelectedKegContent = null;
   if (props.selectedKeg != null) {
-    optionalSelectedKegContent =  <EditKegForm />;
+    optionalSelectedKegContent =  <EditKegForm selectedKeg={props.selectedKeg} />;
   };
 
   return (

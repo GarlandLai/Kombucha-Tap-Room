@@ -1,8 +1,9 @@
 import React from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 function EditKegForm(props) {
-
+console.log(props.selectedKeg)
   var MyEditStyles = {
     backgroundColor: 'grey',
     paddingTop: '50px',
@@ -11,7 +12,7 @@ function EditKegForm(props) {
 
   return(
     <div style={MyEditStyles}>
-    <div class="container">
+    <div className="container">
     <Form>
     <Row>
     <Col>
@@ -41,5 +42,9 @@ function EditKegForm(props) {
     </div>
   );
 }
+
+EditKegForm.propTypes = {
+  selectedKeg: PropTypes.object,
+};
 
 export default EditKegForm
