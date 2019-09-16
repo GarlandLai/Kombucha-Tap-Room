@@ -1,13 +1,13 @@
 # README
 # Kombucha Tap Room
 
-### _Epicodus React Independent Project Week 1, September 6th, 2019_
+### _Epicodus React Independent Project Week 1/2, September 13th, 2019_
 
 ### By _*Garland Lai*_
 
 ## Description
 
-_Website for a Kombucha Tap Room_
+_Website for a Kombucha Tap Room using ReactJS._
 
 ![Component Tree](/src/ComponentTree.png)
 
@@ -33,7 +33,6 @@ _If you have any questions, concerns, or suggestions, please contact me at Garla
 * _ReactJS_
 * _Javascript_
 * _HTML, CSS, and Bootstrap_
-* _Webpack_
 
 #### License
 
