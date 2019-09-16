@@ -41,22 +41,22 @@ function handleUpdateSubmit(event){
     <Form onSubmit={handleUpdateSubmit}>
     <Row>
     <Col>
-    <Form.Control placeholder="Name" />
+    <Form.Control placeholder={props.selectedKeg.name} />
     </Col>
     <Col>
-    <Form.Control placeholder="Brand" />
+    <Form.Control placeholder={props.selectedKeg.brand} />
     </Col>
     <Col>
-    <Form.Control placeholder="Price" />
+    <Form.Control placeholder={props.selectedKeg.price} />
     </Col>
     <Col>
-    <Form.Control placeholder="Flavor" />
+    <Form.Control placeholder={props.selectedKeg.flavor}/>
     </Col>
     </Row>
     <br/>
     <Row>
     <Col>
-    <Form.Control placeholder="Description" />
+    <Form.Control placeholder={props.selectedKeg.content} />
     </Col>
     <Button variant="primary" type="submit">
     Update

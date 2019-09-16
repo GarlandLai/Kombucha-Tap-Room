@@ -9,6 +9,7 @@ function Keg(props) {
     <h3>{props.price}</h3>
     <h3>{props.flavor}</h3>
     <p><em>{props.content}</em></p>
+    <h3>Pints left: {props.pints}</h3>
   </div>;
 
   if (props.currentRouterPath === '/admin') {
@@ -33,6 +34,7 @@ Keg.propTypes = {
   price: PropTypes.number,
   flavor: PropTypes.string,
   content: PropTypes.string,
+  pints: PropTypes.number,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
 };

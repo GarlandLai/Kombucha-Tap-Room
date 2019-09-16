@@ -4,7 +4,7 @@ import Taps from '../images/Taps.jpg'
 function NavButtons(){
   return (
     <div>
-      <img src={Taps}/>
+      <img src={Taps} alt='pic'/>
     </div>
   );
 }

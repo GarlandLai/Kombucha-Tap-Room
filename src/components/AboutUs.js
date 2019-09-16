@@ -5,7 +5,7 @@ function AboutUs(){
   return (
     <div>
       <h1> Our Story</h1>
-      <img src={Jars}/>
+      <img src={Jars} alt="pic"/>
       <br/><br/>
       <h4>Established in 2013. We have a passion for Kombucha. Our mission is to make the best kombucha's in the world available to our community. Come by and grab a tasty drink full of health benefits!</h4>
     </div>
