@@ -62,7 +62,10 @@ class App extends React.Component {
 
   handleUpdateKeg(keg) {
     let selectedKeg = this.state.selectedKeg;
-    console.log(keg);
+  }
+
+  handleSell(){
+    const newPints = this.state.selectedKeg.pints - 1;
   }
 
   render() {
@@ -75,14 +78,13 @@ class App extends React.Component {
             <Route exact path="/" component={Homepage} />
             <Route path="/about" component={AboutUs} />
 
-
             <Route path="/products" render={()=><KegList kegList={this.state.masterKegList} />} />
 
             <Route path='/new' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
 
-            <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}onKegSelection=   {this.handleChangingSelectedKeg}
+            <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} onKegSelection=   {this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}
-            onUpdateKeg={this.state.handleUpdateKeg}/>} />
+            onUpdateKeg={this.state.handleUpdateKeg} onSell={this.state.handleSell}/>} />
             <Route component={Error404} />
           </Switch>
 
